@@ -1,0 +1,15 @@
+[Unit]
+Description=Salary API
+User=ubuntu
+Group=ubuntu
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/salary-api/
+ExecStart=/usr/bin/bash /home/ubuntu/salary-api/start.sh
+Restart=on-abnormal
+[Install]
+WantedBy=multi-user.target
